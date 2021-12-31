@@ -3,11 +3,13 @@ name: Build
 on:
   push:
     branches: [ master ]
+  schedule:
+    - cron: '12 */6 * * *'
 
 jobs:
   build:
     name: Build
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
 
     - name: Set up Go 1.13
